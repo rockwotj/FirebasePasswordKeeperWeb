@@ -1,0 +1,24 @@
+<md-content layout-padding layout="column" ng-hide="ctrl.loggingIn">
+  <md-input-container>
+    <label>Email</label>
+    <input ng-model="ctrl.user.email" type="email">
+  </md-input-container>
+  <md-input-container>
+    <label>Password</label>
+    <input ng-model="ctrl.user.password" type="password">
+  </md-input-container>
+  <div class="md-actions" layout="row" layout-align="end">
+    <md-button ng-click="ctrl.login()" class="md-primary">
+      Login
+    </md-button>
+    <md-button ng-click="ctrl.signup()" class="md-primary">
+      Signup
+    </md-button>
+  </div>
+</md-content>
+
+<md-content layout-padding layout="column" ng-show="ctrl.loggingIn">
+  <div layout="row" layout-align="center center">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+  </div>
+</md-content>

@@ -1,0 +1,33 @@
+<md-dialog aria-label="{{dialog.isNewQuote ? 'Create' : 'Update'}} Password">
+  <form name="passwordForm">
+    <md-dialog-content>
+      <h2 class="md-title">{{dialog.isNewQuote ? 'Create' : 'Update'}} Password</h2>
+      <md-input-container>
+        <label>Service</label>
+        <input required name="service" ng-model="dialog.newPassword.service" autocomplete="off">
+        <div ng-messages="passwordForm.service.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Username</label>
+        <input name="username" ng-model="dialog.newPassword.username" autocomplete="off">
+      </md-input-container>
+      <md-input-container>
+        <label>Password</label>
+        <input required name="password" ng-model="dialog.newPassword.password" autocomplete="off">
+        <div ng-messages="passwordForm.password.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    </md-dialog-content>
+    <div class="md-actions" layout="row">
+      <md-button ng-click="dialog.cancel()" class="md-primary">
+        Cancel
+      </md-button>
+      <md-button ng-click="dialog.ok()" class="md-primary">
+        {{dialog.isNewQuote ? 'Create' : 'Update'}}
+      </md-button>
+    </div>
+  </form>
+</md-dialog>

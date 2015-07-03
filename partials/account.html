@@ -1,0 +1,106 @@
+<md-content flex class="md-padding">
+  <div class="md-whiteframe-z1 account-card">
+    <md-toolbar>
+      <h1 class="md-toolbar-tools">Change Email</h1>
+    </md-toolbar>
+    <form name="changeEmailForm" class="md-padding" autocomplete="off">
+      <input style="display:none">
+      <input type="password" style="display:none">
+      <md-input-container>
+        <label>Confirm Email</label>
+        <input required name="oldEmail" ng-model="ctrl.changeEmail.oldEmail" autocomplete="off">
+        <div ng-messages="changeEmailForm.oldEmail.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>New Email</label>
+        <input required name="newEmail" ng-model="ctrl.changeEmail.newEmail" autocomplete="off">
+        <div ng-messages="changeEmailForm.newEmail.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Password</label>
+        <input required name="password" ng-model="ctrl.changeEmail.password" type="password" autocomplete="off">
+        <div ng-messages="changeEmailForm.password.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <div class="md-actions" layout="row">
+        <span flex></span>
+        <md-button ng-click="ctrl.changeEmailAction()" class="md-primary">
+          Change
+        </md-button>
+      </div>
+    </form>
+  </div>
+
+  <div class="md-whiteframe-z1 account-card">
+    <md-toolbar>
+      <h1 class="md-toolbar-tools">Change Password</h1>
+    </md-toolbar>
+    <form name="changePasswordForm" class="md-padding" autocomplete="off">
+      <input style="display:none">
+      <input type="password" style="display:none">
+      <md-input-container>
+        <label>Email</label>
+        <input required name="email" ng-model="ctrl.changePassword.email" autocomplete="off">
+        <div ng-messages="changePasswordForm.oldEmail.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Confirm Password</label>
+        <input required name="oldPassword" ng-model="ctrl.changePassword.oldPassword" type="password" autocomplete="off">
+        <div ng-messages="changePasswordForm.oldPassword.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>New Password</label>
+        <input required name="newPassword" ng-model="ctrl.changePassword.newPassword" type="password" autocomplete="off">
+        <div ng-messages="changePasswordForm.newPassword.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <div class="md-actions" layout="row">
+        <span flex></span>
+        <md-button ng-click="ctrl.changePasswordAction()" class="md-primary">
+          Change
+        </md-button>
+      </div>
+    </form>
+  </div>
+
+  <div class="md-whiteframe-z1 account-card">
+    <md-toolbar>
+      <h1 class="md-toolbar-tools">Delete Account</h1>
+    </md-toolbar>
+    <form name="deleteAccountForm" class="md-padding" autocomplete="off">
+      <input style="display:none">
+      <input type="password" style="display:none">
+      <md-input-container>
+        <label>Confirm Email</label>
+        <input required name="email" ng-model="ctrl.deleteAccount.email" autocomplete="off">
+        <div ng-messages="deleteAccountForm.email.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Confirm Password</label>
+        <input required name="password" ng-model="ctrl.deleteAccount.password" type="password" autocomplete="off">
+        <div ng-messages="deleteAccountForm.password.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <div class="md-actions md-padding" layout="row">
+        <span flex></span>
+        <md-button ng-click="ctrl.deleteAccountAction()" class="md-raised md-warn">
+          Delete Account
+        </md-button>
+        <span flex></span>
+    </form>
+    </div>
+  </div>
+</md-content>
