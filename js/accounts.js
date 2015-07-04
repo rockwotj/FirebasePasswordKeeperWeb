@@ -51,7 +51,7 @@
         this.login();
         showToast("Welcome to Password Keeper!");
       }).catch(function(error) {
-        self.signingUp = false;
+        self.loggingIn = false;
         showToast(error.message);
       });
     };
