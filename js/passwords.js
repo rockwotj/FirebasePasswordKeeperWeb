@@ -19,14 +19,14 @@
     var self = this;
     var insertDialogController = function (password) {
       return ['$mdDialog', function ($mdDialog) {
-        this.isNewQuote = !password;
+        this.isNewPassword = !password;
         this.newPassword = {};
-        if (!this.isNewQuote) {
+        if (!this.isNewPassword) {
           this.newPassword = password;
           this.originalPassword = angular.copy(password);
         }
         this.cancel = function () {
-          if (!this.isNewQuote) {
+          if (!this.isNewPassword) {
             this.newPassword.service = this.originalPassword.service;
             this.newPassword.username = this.originalPassword.username;
             this.newPassword.password = this.originalPassword.password;
@@ -37,7 +37,7 @@
           if (this.newPassword.username === "") {
             this.newPassword.username = null;
           }
-          if (this.isNewQuote) {
+          if (this.isNewPassword) {
             self.passwords.$add(this.newPassword);
           } else {
             self.passwords.$save(this.newPassword);
